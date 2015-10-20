@@ -163,11 +163,12 @@ console.log("Bind list item events");
 	checkBox.onchange = checkBoxEventHandler; // onchange for spacebar or mouse click
 };
 
+
 var ajaxRequest=function(){
 console.log("AJAX request");
 }
-
-addButton.addEventListener("click",addTask);
+//set the click handler to the addTask function
+addButton.addEventListener("click",addTask);;
 addButton.addEventListener("click",ajaxRequest);
 
 
