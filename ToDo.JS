@@ -70,6 +70,7 @@ var createNewTaskElement=function(taskString){ //checkbox
   deleteButton.className="delete";
   
   label.innerText = taskString;
+  
   //each element needs appending 
   listItem.appendChild(checkBox);
   listItem.appendChild(label);
@@ -92,10 +93,10 @@ console.log("Add task...");  //testing purpose
   
 };
 
-
+//edit an existing task when the edit button is pressed
 var editTask=function(){
 console.log("edit task...");  //console.log for testing purpose 
-
+  	
 var listItem=this.parentNode;
   
 var editInput=listItem.querySelector("input[type=text]");
@@ -103,18 +104,20 @@ var label=listItem.querySelector("label");
   
 var containsClass=listItem.classList.contains("editMode");
   
-  
-if(containsClass){
-
-label.innerText=editInput.value;
-}else{
-  
+  //if the class of parent is .editMode, we want to switch from editMode
+  if(containsClass){
+  //switch from .editMode
+  //label text become the input's value
+  label.innerText=editInput.value;
+  }else{
+  //switch to .editMode
+  //input value becomes the label's text 
   editInput.value=label.innerText;
-}
+  }
+  //Toggle.editMode on the parent  
+  listItem.classList.toggle("editMode");  
   
- listItem.classList.toggle("editMode");  
-  
-};
+  };
 
 //delete an exisiting task when the delete button is pressed 
 var deleteTask=function(){
