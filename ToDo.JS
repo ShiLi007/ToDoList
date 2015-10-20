@@ -169,7 +169,7 @@ console.log("AJAX request");
 }
 //set the click handler to the addTask function
 addButton.addEventListener("click",addTask);;
-addButton.addEventListener("click",ajaxRequest);
+addButton.addEventListener("click",ajaxRequest); //add a second event handler to the add button
 
 
 
